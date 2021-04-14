@@ -16,7 +16,8 @@ public class PlayerControlFlashLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateFlashLightPositionAndRotation();
+        ControlFlashLight();
     }
 
     private void ControlFlashLight()
@@ -25,13 +26,27 @@ public class PlayerControlFlashLight : MonoBehaviour
         {
             if (IfOn)
             {
-
+                MyFlashLight.SetActive(false);
+                IfOn = false;
             }
             else
             {
-
+                MyFlashLight.SetActive(true);
+                IfOn = true;
             }
         }
+    }
+
+    private void UpdateFlashLightPositionAndRotation()
+    {
+        MyFlashLight.transform.position = PlayerObject.transform.position;
+        MyFlashLight.transform.rotation = PlayerObject.transform.rotation;
+
+        MyFlashLight.GetComponent<ASL.ASLObject>().SendAndSetClaim(() =>
+        {
+            MyFlashLight.GetComponent<ASL.ASLObject>().SendAndSetWorldRotation(PlayerObject.transform.rotation);
+            MyFlashLight.GetComponent<ASL.ASLObject>().SendAndSetWorldPosition(PlayerObject.transform.position);
+        });
     }
 
     private static void GetLightObject(GameObject _myGameObject)
@@ -39,5 +54,4 @@ public class PlayerControlFlashLight : MonoBehaviour
         MyFlashLight = _myGameObject;
         MyFlashLight.SetActive(false);
     }
-
 }

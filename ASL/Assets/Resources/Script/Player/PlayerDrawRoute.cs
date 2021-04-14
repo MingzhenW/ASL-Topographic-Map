@@ -13,6 +13,14 @@ public class PlayerDrawRoute : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        DrawRoute();
+    }
+
+    private void DrawRoute()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+
+        }
     }
 }
