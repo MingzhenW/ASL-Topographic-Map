@@ -1,2 +1,0 @@
-# ASL-Topographic-Map
-ASL
