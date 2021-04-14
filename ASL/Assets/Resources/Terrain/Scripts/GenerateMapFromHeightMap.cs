@@ -107,10 +107,10 @@ public class GenerateMapFromHeightMap : MonoBehaviour {
                 //rotation.eulerAngles = new Vector3(0f, 180f, 0f);
                 //chunk.transform.localRotation = rotation;
                 chunk.transform.position = new Vector3(chunkCenter.x, 0f, chunkCenter.y);
-                chunk.GetComponent<MeshFilter>().sharedMesh = mesh;
-                chunk.GetComponent<MeshCollider>().sharedMesh = mesh;
-                chunk.GetComponent<MeshRenderer>().sharedMaterial = Instantiate(material);
-                chunk.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = mapChunks[x, z].heightmap;
+                chunk.GetComponent<MeshFilter>().mesh = mesh;
+                //chunk.GetComponent<MeshCollider>().sharedMesh = mesh;
+                chunk.GetComponent<MeshRenderer>().material = Instantiate(material);
+                chunk.GetComponent<MeshRenderer>().material.mainTexture = mapChunks[x, z].heightmap;
 
             }
         }
