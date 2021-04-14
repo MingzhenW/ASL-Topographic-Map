@@ -103,6 +103,7 @@ public class GenerateMapFromHeightMap : MonoBehaviour {
                 GameObject chunk = GameObject.CreatePrimitive(PrimitiveType.Plane);
                 chunk.transform.parent = transform;
                 chunk.name = "chunk" + z + x;
+                chunk.transform.tag = "Chunk";
                 //Quaternion rotation = Quaternion.identity;
                 //rotation.eulerAngles = new Vector3(0f, 180f, 0f);
                 //chunk.transform.localRotation = rotation;

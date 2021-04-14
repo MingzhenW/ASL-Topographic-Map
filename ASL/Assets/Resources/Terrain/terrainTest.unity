@@ -345,7 +345,7 @@ MonoBehaviour:
   centers: []
   material: {fileID: 2100000, guid: 69362b00cdf16f540a005f720b50c4dc, type: 2}
   heightmap: {fileID: 2800000, guid: c38f55678c28cac4c87a0247df7eae67, type: 3}
-  mapSize: 100
+  mapSize: 30
   noiseScale: 0.3
   octaves: 4
   persistence: 0.5
